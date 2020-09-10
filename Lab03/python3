@@ -1,0 +1,32 @@
+name
+10
+strong
+pig
+red
+blue
+running
+dollars
+# By submitting this assignment, I agree to the following:
+#  "Aggies do not lie, cheat, or steal, or tolerate those who do"
+#  "I have not given or received any unauthorized aid on this assignment"
+#
+# Name:        Rushil Udani
+# Section:     219
+# Assignment:  03 Program 3
+# Date:        10 09 2020
+
+name      = input('Please enter a name: ')
+num       = input('Please enter a number: ')
+adjective = input('Please enter a adjective: ')
+noun      = input('Please enter a noun: ')
+color1    = input('Please enter a color: ')
+color2    = input('Please enter another color: ')
+gerund    = input('Please enter a verb ending in -ing: ')
+money     = input('Please enter a currency type: ')
+
+print(
+	f'There once was a child named {name}. They were only {num} years old.\n'
+	f'{money}\n'
+	'{money}\n'
+	)
+
