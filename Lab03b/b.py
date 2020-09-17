@@ -18,13 +18,13 @@ def color_red(s):
 
 mass = 2.8
 
-x1 = float(input(color_blue('Red\'s x position for the first point:') + ' \t > '))
-y1 = float(input(color_blue('Red\'s y position for the first point:') + ' \t > '))
-t1 = float(input(color_blue('Red\'s t position for the first point:') + ' \t > '))
+x1 = float(input(color_blue('Red\'s x position for the first point:') + '\t > '))
+y1 = float(input(color_blue('Red\'s y position for the first point:') + '\t > '))
+t1 = float(input(color_blue('The time of the first point:          ') + '\t > '))
 print()
-x2 = float(input(color_blue('Red\'s x position for the second point:') + ' \t > '))
-y2 = float(input(color_blue('Red\'s y position for the second point:') + ' \t > '))
-t2 = float(input(color_blue('Red\'s t position for the second point:') + ' \t > '))
+x2 = float(input(color_blue('Red\'s x position for the second point:') + '\t > '))
+y2 = float(input(color_blue('Red\'s y position for the second point:') + '\t > '))
+t2 = float(input(color_blue('The time of the second point:          ') + '\t > '))
 print()
 
 vel_x = (x2 - x1) / (t2 - t1)
@@ -33,5 +33,6 @@ vel_composite = hypot(vel_x, vel_y)
 
 kinetic_energy = 1/2 * mass * vel_composite ** 2
 
-print(color_red('Red\'s kinetic energy is approximately'), f'{kinetic_energy:.3f}')
+print(color_red('Red\'s kinetic energy is approximately'),
+		f'{kinetic_energy:.3f}', color_red('joules.'))
 

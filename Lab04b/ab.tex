@@ -1,0 +1,66 @@
+% This does not work on my machine, but I'm compiling it on overleaf.com and downloading the pdf here. 
+\documentclass{article}
+\usepackage{minted}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+{\Large Lab 04b Program 1: Evaluating Booleans}
+\vspace{0.5cm}
+
+\noindent
+By submitting this assignment, I agree to the following: \\
+ ``Aggies do not lie, cheat, or steal, or tolerate those who do'' \\
+ ``I have not given or received any unauthorized aid on this assignment'' \\
+
+\noindent
+Name:        Rushil Udani \\*
+Section:     219 \\*
+Assignment:  04b Program 1 \\*
+Date:        14 09 2020 \\*
+
+\hrulefill
+
+\section*{Variable definitions}
+
+\begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, fontsize=\footnotesize, linenos, breaklines]{python}
+a = True
+b = True
+c = False
+\end{minted}
+
+\section*{Problem A}
+\begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, fontsize=\footnotesize, linenos, breaklines]{python}
+a or b and c
+True or (b and c)
+True
+\end{minted}
+
+\section*{Problem B}
+\begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, fontsize=\footnotesize, linenos, breaklines]{python}
+(not (a and not b) or (not c and b)) and (not b) or (not a and b and not c) or (a and not b)
+(not (True and not True) or (not False and True)) and (not True) or (not True and True and not False) or (True and not True)
+(not (True and False) or (True and True)) and False or (False and True and True) or (True and False)
+(not False or True) and False or False or False
+True and False or False or False
+False
+\end{minted}
+
+\section*{Problem C}
+\begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, fontsize=\footnotesize, linenos, breaklines]{python}
+(not ((b or not c) and (not a or not c))) or (not (c or not (b and c))) or (a and not c) and (not a or (a and b and c) or (a and ((b and not c) or (not b))))
+(not ((True or not False) and (not True or not False))) or (not (False or not (True and False))) or (True and not False) and (not True or (True and True and False) or (True and ((True and not False) or (not True))))
+(not ((True or True) and (False or True))) or (not (False or not (True and False))) or (True and True) and (False or (True and True and False) or (True and ((True and True) or False)))
+(not (True and True)) or (not (False or not False)) or True and (False or False or (True and (True or False)))
+(not True) or (not True) or True and (False or False or (True and True))
+False or False or True and (False or False or (True and True))
+False or False or True
+True
+\end{minted}
+
+
+
+\end{document}
+

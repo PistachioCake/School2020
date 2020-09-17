@@ -22,7 +22,7 @@ print(energy)
 
 # Reynold's Number: https://byjus.com/reynolds-number-formul
 print()
-print(color('ber for a given fluid'))
+print(color('Reynold\'s Number for a given fluid'))
 velocity = float(input('Velocity: '))
 viscosity = float(input('Viscosity: '))
 lin_dim = float(input('Linear Dimension: '))
