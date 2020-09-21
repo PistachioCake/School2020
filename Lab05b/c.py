@@ -7,6 +7,9 @@
 # Assignment:  05b Program 3
 # Date:        09 18 2020
 
+# This program in one line:
+# (lambda f: (lambda x: x(x))(lambda y: f(lambda *args: y(y)(*args))))(lambda f: lambda a, b, inp: f(b, a+b, int(input('Correct\n> '))) if inp == b else print('Incorrect'))(0, 1, int(input('> ')))
+
 a, b = 0, 1
 print('The first fibonnacci number is 0.')
 while True:
