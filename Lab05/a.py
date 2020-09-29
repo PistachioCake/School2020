@@ -9,22 +9,29 @@
 
 # We have 10 seconds and 500 feet to accelerate to 88 mph
 
+# ------------ Problem-Specific Constants -------------------------------------
 TIME_LIMIT = 10
 DIST_LIMIT = 500
-
-accel = float(input('What\'s the acceleration [ft/s^2]? '))
-
 TIME_STEP = 0.1
 
-velocity = 0
+# ------------ User input ----------------------------------------------------- 
+accel = float(input('What\'s the acceleration [ft/s^2]? '))
+print()
+
+# ------------ Calculations ---------------------------------------------------
 dist = 0
 iterations = 0
+velocity = 0
 
 while velocity < 88:
 	iterations += 1
-	velocity = accel * time * 5280 / 3600
+	# Calculate current time and distance based on how many iterations we've gone through
 	time = iterations * TIME_STEP
 	dist = 1/2 * accel * time ** 2
+	# Get velocity in mph
+	velocity = accel * time * 5280 / 3600
+
+	# Check if we've exceeded our boundaries
 	if time > TIME_LIMIT:
 		print('Marty, this acceleration is too small to achieve\n'
 		      'the required speed with the given constraints.\n'
@@ -35,7 +42,7 @@ while velocity < 88:
 		      'the required speed with the given constraints.\n'
 			 f'You will only reach {velocity:.3f} mph before the road ends.')
 		break
-else:
+else: # If we didn't break, meaning we didn't pass the time or distance bounds
 	print('You made it!\n'
 	     f'It took {time:.1f} seconds to accelerate to 88 mph.')
 
