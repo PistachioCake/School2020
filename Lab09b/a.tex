@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{forest}
+
+\geometry{a4paper, margin=1in}
+\renewcommand{\thesection}{\Alph{section}.}
+
+\begin{document}
+
+{\Large Lab 09b Assignment 1}
+\vspace{0.25in}
+
+\noindent
+By submitting this assignment, I agree to the following: \\
+\indent ``Aggies do not lie, cheat, or steal, or tolerate those who do'' \\
+\indent ``I have not given or received any unauthorized aid on this assignment'' \\
+
+\noindent
+Name:        Rushil Udani \\*
+Section:     219 \\*
+Assignment:  09b Assignment 1 \\*
+Date:        19 10 2020 \\*
+
+\hrulefill
+
+\section{Hierarchy for Lab09 Program 1}
+
+\begin{forest}
+	[Program, for tree={fill=green!20, draw=black, align=center}, for leaves={fill=blue!20}, for children={fit=rectangle}
+		[Get user input
+			[Get name of\\dependent\\variable]
+			[Loop until\\`q' entered
+				[Get x and\\y values]
+			]
+		]
+		[Output\\data to file
+			[See assignment for\\specification]
+		]
+		[Interpolate or\\extrapolate
+			[Loop until\\`q' entered
+				[Get x-value\\from user]
+				[Find\\containing\\region]
+				[Calculate\\y-value from\\region]
+				[Output\\to file]
+			]
+		]
+	]
+\end{forest}
+
+
+\section{Dividing tasks among team members}
+
+This is still a pretty small program, which means dividing it into chunks is 
+not super necessary. It would likely take a motivated student on the order of 
+one hour to do it. That said, the easiest way to divide up the work among four 
+people is as follows:
+
+\begin{enumerate}
+	\item Get user input
+		\begin{itemize}
+			\item Save the values to agreed upon variable names
+		\end{itemize}
+	\item Output data
+		\begin{itemize}
+			\item This includes data from person 1 {\textbf and} person 3
+		\end{itemize}
+	\item Calculate y-value from inputted x-value
+		\begin{itemize}
+			\item Use variables established by person 1
+			\item Only needs to write one iteration (putting it in a loop is easy)
+		\end{itemize}
+	\item Combine and test
+		\begin{itemize}
+			\item This can only be done {\textbf after} everybody else is done
+			\item Should perform both unit and integration tests
+		\end{itemize}
+\end{enumerate}
+
+\section{Dividing testing among team members}
+
+As established above, the primary responsibility of testing is on person 4.
+Person 4 should provide some testing data to each person as part of their role.
+However, each person should perform their own testing to ensure correctness of
+their code. Person 4 is responsible for integration testing: i.e. establishing
+that all the individual parts of code will work together. 
+
+\end{document}
+
