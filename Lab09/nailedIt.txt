@@ -1,0 +1,18 @@
+Team 4: Braeden Stewart, Grant Trusty, Rushil Udani, Collin Stafford
+October 22, 2020
+
+x-values = time, y-values = kg of cheese consumed by llamas
+-----------------------------------------------------------------------
+2, 87
+3, 99
+5, 1022
+8, 1180
+65, 42
+97, 5
+-----------------------------------------------------------------------
+72, 33.9062   interpolation
+40, 541.123   interpolation
+30, 740.772   interpolation
+10, 1140.07   interpolation
+0, 63         extrapolation
+100, 1.53125  extrapolation
