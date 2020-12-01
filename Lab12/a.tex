@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{forest}
+\usepackage{fancyvrb}
+
+\geometry{a4paper, margin=1in}
+\renewcommand{\thesection}{\Alph{section}.}
+
+\newcommand{\code}[1]{\Verb/{#1}/}
+
+\begin{document}
+
+{\Large Lab 12 Planning Document}
+\vspace{0.25in}
+
+\noindent
+By submitting this assignment, I agree to the following: \\
+\indent ``Aggies do not lie, cheat, or steal, or tolerate those who do'' \\
+\indent ``I have not given or received any unauthorized aid on this assignment'' \\
+
+\noindent
+Name:        Rushil Udani, Braeden Stewart, Collin Stafford, Grant Trusty \\*
+Section:     219 \\*
+Assignment:  Team Project Planning Document \\*
+Date:        15 11 2020 \\*
+
+\hrulefill
+
+\section{List of Functions}
+\begin{itemize}
+	\item \code{get\_basics}
+		\begin{itemize}
+			\item Purpose: Get user selections for bird and planet.
+			\item Parameters: None
+			\item Return values: \code{(bird, gravity)} where \code{bird} is an element of \code{BIRDS}, and \code{gravity} is the gravity of the planet.
+			\item Other functions: \code{bird\_picker}, \code{planet\_picker}.
+		\end{itemize}
+	\item \code{bird\_picker}
+		\begin{itemize}
+			\item Purpose: Get user selection for bird.
+			\item Process: Print a menu of all birds; Get user selection; Return associated bird.
+			\item Parameters: None; depends on \code{BIRDS}
+			\item Return values: \code{(name, color, size)}, an element of \code{BIRDS}
+			\item Other functions: None
+		\end{itemize}
+	\item \code{planet\_picker}
+		\begin{itemize}
+			\item Purpose: Get user selection for planet.
+			\item Process: Print a menu of all planets; Get user selection; Return associated planet.
+			\item Parameters: None; depends on \code{PLANETS}
+			\item Return values: \code{(name, gravity)}, an element of \code{PLANETS}
+			\item Other functions: None
+		\end{itemize}
+	\item \code{get\_guesses}
+		\begin{itemize}
+			\item Purpose: Get user guesses for velocity and launch angle.
+			\item Parameters: None
+			\item Return values: \code{(vel, angle)}
+			\item Other functions: None
+		\end{itemize}
+	\item \code{trajectory}
+		\begin{itemize}
+			\item Purpose: Calculate points along the bird's flight path.
+			\item Parameters: \code{gravity}, \code{vel}, \code{angle}
+			\item Return values: None
+			\item Other functions: \code{trajectory\_y}
+		\end{itemize}
+	\item \code{hit}
+		\begin{itemize}
+			\item Purpose: Determine whether the target was hit or not.
+			\item Parameters: \code{xs}, \code{ys}, \code{target} (given as \code{(x, y, size)})
+			\item Return values: \code{bool}
+			\item Other functions: None
+		\end{itemize}
+	\item \code{birds\_plot}
+		\begin{itemize}
+			\item Purpose: Plot and show a picture of the scene.
+			\item Parameters: \code{xs}, \code{ys}, \code{target} (given as \code{(x, y, size)}), \code{bird} (as an element of \code{BIRDS})
+			\item Return values: None
+			\item Other functions: \code{hit}
+		\end{itemize}
+	\item \code{trajectory\_y}
+		\begin{itemize}
+			\item Purpose: Calculate the height of a point on a trajectory.
+			\item Parameters: \code{x}, \code{gravity}, \code{vel}, \code{angle}
+			\item Return values: \code{y}
+			\item Other functions: None
+		\end{itemize}
+\end{itemize}
+
+\section{Hierarchy for Lab12 Program 1}
+\begin{forest}
+	[Angry Birds Program, for tree={fill=green!20, draw=black, align=center}, for leaves={fill=blue!20}, fit=tight
+		[Main Loop
+			[Generate random target]
+			[\code{get\_basics}
+				[\code{get\_bird}]
+				[\code{get\_planet}]
+			]
+			[Loop until bird hits target
+				[\code{get\_guesses}]
+				[Calculate and plot trajectory
+					[\code{trajectory}]
+					[\code{birds\_plot}]
+				]
+			]
+		]
+		[Exit gracefully]
+	]
+\end{forest}
+
+\end{document}
+

@@ -1,1 +1,6 @@
 __pychache__/
+
+# Latex extra files
+.aux
+.dvi
+.log
